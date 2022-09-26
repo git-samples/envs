@@ -1,0 +1,22 @@
+name: Main
+
+on:
+  workflow_dispatch:
+    inputs:
+      service:
+        description: Service name
+        required: true
+
+jobs:
+  create_environment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create environment
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.repos.createOrUpdateEnvironment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              : [{"type":"Team","id":6684320}]},
+            })

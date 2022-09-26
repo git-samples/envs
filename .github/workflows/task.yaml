@@ -1,0 +1,16 @@
+name: Main
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Environment
+        required: true
+
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - name: Hello World
+        run: echo Hello World
