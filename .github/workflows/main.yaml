@@ -18,5 +18,5 @@ jobs:
             github.rest.repos.createOrUpdateEnvironment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              : [{"type":"Team","id":6684320}]},
+              reviewers: [{"type":"Team","id":6684320}]},
             })
