@@ -21,4 +21,3 @@ jobs:
               environment_name: "${{ inputs.service }}",
               reviewers: [{"type":"Team","id":6684320}],
             });
-
