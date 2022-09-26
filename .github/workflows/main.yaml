@@ -10,24 +10,11 @@ on:
 jobs:
   create_environment:
     runs-on: ubuntu-latest
-    permissions:
-      actions: write
-      checks: write
-      contents: write
-      deployments: write
-      id-token: write
-      issues: write
-      discussions: write
-      packages: write
-      pages: write
-      pull-requests: write
-      repository-projects: write
-      security-events: write
-      statuses: write
     steps:
       - name: Create environment
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.TOKEN }}
           script: |
             github.rest.repos.createOrUpdateEnvironment({
               owner: context.repo.owner,
